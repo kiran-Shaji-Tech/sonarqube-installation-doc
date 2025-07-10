@@ -1,4 +1,4 @@
-# sonarqube-installation-doc
+# Sonarqube-installation-doc
 This guide provides step-by-step instructions to install and configure SonarQube on an Ubuntu 22.04 LTS server.
 
 📦 1. **Update Your Server**
