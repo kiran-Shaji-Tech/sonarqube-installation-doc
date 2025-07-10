@@ -136,8 +136,11 @@ WantedBy=multi-user.target
 **Enable and start SonarQube:**
 
 sudo systemctl enable sonar
+
 sudo systemctl start sonar
+
 sudo systemctl status sonar
+
 
 🧠 8. **Update Kernel Limits**
 
