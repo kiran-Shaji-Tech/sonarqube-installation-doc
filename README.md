@@ -72,7 +72,7 @@ Edit SonarQube's configuration:
 
 sudo vi /opt/sonarqube/conf/sonar.properties
 
-Uncomment and update:
+**Uncomment and update:**
   
 sonar.jdbc.username=sonar
 
@@ -85,7 +85,7 @@ sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
 
 sudo vi /opt/sonarqube/bin/linux-x86-64/sonar.sh
 
-Uncomment and modify:
+**Uncomment and modify:**
 
 RUN_AS_USER=sonar
 
@@ -98,22 +98,36 @@ Create the service file by,
 sudo vi /etc/systemd/system/sonar.service
 
 
-Paste the following:
+**Paste the following:**
+
 [Unit]
+
 Description=SonarQube service
+
 After=syslog.target network.target
 
+
 [Service]
+
 Type=forking
+
 ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+
 ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
 User=sonar
+
 Group=sonar
+
 Restart=always
+
 LimitNOFILE=65536
+
 LimitNPROC=4096
 
+
 [Install]
+
 WantedBy=multi-user.target
 
 **Enable and start SonarQube:**
