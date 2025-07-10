@@ -3,9 +3,12 @@ This guide provides step-by-step instructions to install and configure SonarQube
 
 📦 1. **Update Your Server**
 SSH into your server as a non-root user with sudo privileges and update the system:
+
 sudo apt update && sudo apt upgrade -y
 
+
 ☕ 2. **Install OpenJDK 17**
+
 sudo apt install -y openjdk-17-jdk
 
 🐘3. **Install and Configure PostgreSQL**
