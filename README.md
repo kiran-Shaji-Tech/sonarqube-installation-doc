@@ -151,7 +151,9 @@ sudo vi /etc/sysctl.conf
 Add:
 
 vm.max_map_count=262144
+
 fs.file-max=65536
+
 
 **Edit /etc/security/limits.conf to add:**
 
