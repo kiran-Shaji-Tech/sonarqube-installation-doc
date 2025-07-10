@@ -35,8 +35,11 @@ psql
 **In the PostgreSQL shell:**
 
 ALTER USER sonar WITH ENCRYPTED PASSWORD 'your_strong_password';
+
 CREATE DATABASE sonarqube OWNER sonar;
+
 GRANT ALL PRIVILEGES ON DATABASE sonarqube TO sonar;
+
 \q
 
 Exit the postgres user:
@@ -46,15 +49,22 @@ exit
 📥 4. **Download and Install SonarQube**
 
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-25.7.0.110598.zip
+
 sudo apt install -y zip
+
 sudo unzip sonarqube-25.7.0.110598.zip
+
 sudo mv sonarqube-25.7.0.110598 /opt/sonarqube
+
 
 👤 5. **Create SonarQube User and Group**
 
 sudo groupadd sonar
+
 sudo useradd -d /opt/sonarqube -g sonar sonar
+
 sudo chown -R sonar:sonar /opt/sonarqube
+
 
 ⚙️ 6. **Configure SonarQube**
 
@@ -65,8 +75,11 @@ sudo vi /opt/sonarqube/conf/sonar.properties
 Uncomment and update:
   
 sonar.jdbc.username=sonar
+
 sonar.jdbc.password=your_strong_password
+
 sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
+
 
 **Edit the sonar.sh script:**
 
