@@ -9,24 +9,29 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y openjdk-17-jdk
 
 🐘3. **Install and Configure PostgreSQL**
+
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
 
 **Install PostgreSQL:**
+
 sudo apt update
 sudo apt install -y postgresql postgresql-contrib
 
 **Enable and start the service:**
+
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 
 **Configure PostgreSQL:**
+
 sudo passwd postgres
 su - postgres
 createuser sonar
 psql
 
 **In the PostgreSQL shell:**
+
 ALTER USER sonar WITH ENCRYPTED PASSWORD 'your_strong_password';
 CREATE DATABASE sonarqube OWNER sonar;
 GRANT ALL PRIVILEGES ON DATABASE sonarqube TO sonar;
