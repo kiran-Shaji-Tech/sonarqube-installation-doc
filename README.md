@@ -157,9 +157,9 @@ fs.file-max=65536
 
 **Edit /etc/security/limits.conf to add:**
 
-* - nofile 65536
+   * - nofile 65536
     
-* - nproc 4096
+   * - nproc 4096
 
 🌐 9. **Access the SonarQube Web Interface**
 
